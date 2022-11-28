@@ -4,7 +4,7 @@ import pymysql
 import matplotlib.pyplot as plt
 
 #definitions
-con=pymysql.connect(host="localhost",user="root", passwd="Shanjiv#1707")
+con=pymysql.connect(host="localhost",user="root", passwd="manager")
 cursor=con.cursor()
 
 #functions
