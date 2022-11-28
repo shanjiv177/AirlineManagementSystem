@@ -1,10 +1,13 @@
+#imports
 import sys
 import pymysql
 import matplotlib.pyplot as plt
-con=pymysql.connect(host="localhost",user="root", passwd="Shanjiv#1707")
 
+#definitions
+con=pymysql.connect(host="localhost",user="root", passwd="Shanjiv#1707")
 cursor=con.cursor()
 
+#functions
 def graphfva():
     query="SELECT * from passengers"
     cursor.execute(query)
@@ -289,6 +292,7 @@ def ifexists(id):
     else:
         return False
 
+#main
 def main():
     print("Welcome Airline Management System!")
     print()
