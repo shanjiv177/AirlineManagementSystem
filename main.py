@@ -1,7 +1,7 @@
 import sys
 import pymysql
 import matplotlib.pyplot as plt
-con=pymysql.connect(host="localhost",user="root", passwd="manager")
+con=pymysql.connect(host="localhost",user="root", passwd="Shanjiv#1707")
 
 cursor=con.cursor()
 
@@ -288,6 +288,7 @@ def ifexists(id):
         return True
     else:
         return False
+
 def main():
     print("Welcome Airline Management System!")
     print()
