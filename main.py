@@ -37,9 +37,9 @@ try:
             if connected==True:   
                 if cursor.connection:
                     connected=True
-                    print("\tDatabase Connection Succeeded!")
+                    print("\tDatabase Connection Successful!")
                 else:
-                    print("\tConnection Unsuccesful!")
+                    print("\tDatabase connection Unsuccesful!")
             else:
                 pass
     else:
@@ -430,6 +430,7 @@ try:
         elif ch == 7:
             addnewf()
         elif ch == 8:
+            print("Program exit successful!")
             sys.exit()
         else:
             print("Invalid Input")
