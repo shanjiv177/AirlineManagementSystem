@@ -37,9 +37,9 @@ try:
             if connected==True:   
                 if cursor.connection:
                     connected=True
-                    print("\tDatabase Connection Succeeded!")
+                    print("\tDatabase Connection Successful!")
                 else:
-                    print("\tConnection Unsuccesful!")
+                    print("\tDatabase connection Unsuccesful!")
             else:
                 pass
     else:
@@ -430,6 +430,7 @@ try:
         elif ch == 7:
             addnewf()
         elif ch == 8:
+            print("Program exit successful!")
             sys.exit()
         else:
             print("Invalid Input")
@@ -452,6 +453,7 @@ try:
 
         cursor.execute("USE AIRLINES_MANAGEMENT_SYSTEM")
         con.commit()
+        #con=pms.connect(host="localhost",user="root", passwd="Shanjiv#1707", database="test3")
         cursor.execute("CREATE TABLE IF NOT EXISTS passengers(ID int AUTO_INCREMENT PRIMARY KEY, Name varchar(20),Flight_ID int REFERENCES flights.Flight_ID, Age INT, Mobile_Number varchar(10), Gender varchar(1))")
         con.commit()
         cursor.execute("CREATE TABLE IF NOT EXISTS flights(Flight_ID int AUTO_INCREMENT PRIMARY KEY, Airline_Name varchar(20), Start_ID int REFERENCES start.start_ID, Destination_ID int REFERENCES destination.Destination_ID, Time_Of_Flight_mins int, Price int)")
