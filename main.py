@@ -212,7 +212,7 @@ try:
         if ifexists(id):
             while True:
                 try:
-                    print("You can change the following details of a passenger:\n 1. Name \n 2. Age \n3. Mobile Number \n4. Flight ID \n5. Gender\n")
+                    print("You can change the following details of a passenger:\n1. Name\n2. Age\n3. Mobile Number\n4.Flight ID\n5.Gender\n")
                     ch=int(input("Which Data would you like to change?(Enter the corresponding number given above):"))
                 except ValueError:
                     print("Enter Valid input")
@@ -305,7 +305,7 @@ try:
         if flightCount > 0:
             cursor.execute(f"SELECT * FROM flights WHERE start_ID={start} AND Destination_ID={dest}")
             flights=cursor.fetchall()
-            print("(Flight ID, Airline Name, Destination, Start, Time of Flight in mins)")
+            print("(Flight ID, Airline Name, Destination, Start, Time of Flight in mins, Price in Rs.)")
             for i in flights:
                 print(i)
             while True:
@@ -358,12 +358,19 @@ try:
         dest=places[1]    
         while True:
             try:
-                tof = int(input("Enter Time of Flight:"))
+                tof = int(input("Enter Time of Flight (mins):"))
             except ValueError:
-                print("Enter Valid time in integers")
+                print("Enter Valid time (in integers)")
             else:
                 break
-        cursor.execute(f"INSERT INTO flights(Airline_Name, Start_ID, Destination_ID, Time_Of_Flight_mins) values('{aname}', '{start}', '{dest}',{tof})")
+        while True:
+            try:
+                price = int(input("Enter Price(in Rs.):"))
+            except ValueError:
+                print("Enter Valid Price (in integers)")
+            else:
+                break
+        cursor.execute(f"INSERT INTO flights(Airline_Name, Start_ID, Destination_ID, Time_Of_Flight_mins, Price) values('{aname}', '{start}', '{dest}',{tof}, {price})")
         con.commit()
 
     #fucntion to parse through the request requested by the user
@@ -448,7 +455,7 @@ try:
         #con=pms.connect(host="localhost",user="root", passwd="Shanjiv#1707", database="test3")
         cursor.execute("CREATE TABLE IF NOT EXISTS passengers(ID int AUTO_INCREMENT PRIMARY KEY, Name varchar(20),Flight_ID int REFERENCES flights.Flight_ID, Age INT, Mobile_Number varchar(10), Gender varchar(1))")
         con.commit()
-        cursor.execute("CREATE TABLE IF NOT EXISTS flights(Flight_ID int AUTO_INCREMENT PRIMARY KEY, Airline_Name varchar(20), Start_ID int REFERENCES start.start_ID, Destination_ID int REFERENCES destination.Destination_ID, Time_Of_Flight_mins int)")
+        cursor.execute("CREATE TABLE IF NOT EXISTS flights(Flight_ID int AUTO_INCREMENT PRIMARY KEY, Airline_Name varchar(20), Start_ID int REFERENCES start.start_ID, Destination_ID int REFERENCES destination.Destination_ID, Time_Of_Flight_mins int, Price int)")
         con.commit()
         cursor.execute("CREATE TABLE IF NOT EXISTS places(Place_ID int AUTO_INCREMENT PRIMARY KEY, Place varchar(20))")
         con.commit()
