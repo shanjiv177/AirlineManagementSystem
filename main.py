@@ -520,11 +520,3 @@ try:
     main()
 except KeyboardInterrupt:
     print("\n\t\t\tProgram exit successful!")
-
-
-    '''
-    For the proper functioning of this code, the following modules are a prerequisite:
-    pymysql : use "pip install pymysql" to install
-    matplotlib : use "pip install matplotlin" to install
-    sys: this module is built into python's default library
-    '''
