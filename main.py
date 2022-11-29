@@ -500,7 +500,7 @@ try:
                 
             choices(ch)
             print("Do you want to do something else?")
-            yon=input("Type Y for yes and anyother key to exit:").lower()
+            yon=input("Type Y for yes and any other key to exit:").lower()
             if yon=='y':
                 wtp=True
             else:
