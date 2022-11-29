@@ -5,7 +5,7 @@ import sys
 import pymysql
 import matplotlib.pyplot as plt
 
-
+print("\n\t\t\tWelcome to Airline Management System!")
 try:
     #function to ask the user for database login credentials
     #this function had to be called first as this initializes the code by setting up the sql cursor
@@ -317,6 +317,7 @@ try:
                     break
         else:
             print("No Flights Available")
+            main()
             sys.exit()
         while True:
             try:
@@ -437,7 +438,6 @@ try:
 
     #the main function
     def main():
-        print("\n\t\t\tWelcome to Airline Management System!")
         print()
 
         cursor.execute("CREATE DATABASE IF NOT EXISTS AIRLINES_MANAGEMENT_SYSTEM")
