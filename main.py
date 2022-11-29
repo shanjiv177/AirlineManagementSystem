@@ -440,10 +440,10 @@ try:
         print("\n\t\t\tWelcome to Airline Management System!")
         print()
 
-        cursor.execute("CREATE DATABASE IF NOT EXISTS AIRLINES_MANAGEMENT_SYSTEM4")
+        cursor.execute("CREATE DATABASE IF NOT EXISTS AIRLINES_MANAGEMENT_SYSTEM")
         con.commit()
 
-        cursor.execute("USE AIRLINES_MANAGEMENT_SYSTEM4")
+        cursor.execute("USE AIRLINES_MANAGEMENT_SYSTEM")
         con.commit()
         #con=pms.connect(host="localhost",user="root", passwd="Shanjiv#1707", database="test3")
         cursor.execute("CREATE TABLE IF NOT EXISTS passengers(ID int AUTO_INCREMENT PRIMARY KEY, Name varchar(20),Flight_ID int REFERENCES flights.Flight_ID, Age INT, Mobile_Number varchar(10), Gender varchar(1))")
