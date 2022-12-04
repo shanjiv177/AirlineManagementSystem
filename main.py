@@ -32,8 +32,7 @@ try:
                 print("\tDatabase connection Unsuccesful!")
                 print("\tPlease provide correct credentials")
             else:
-                connected=True
-                
+                connected=True                                
             if connected==True:   
                 if cursor.connection:
                     connected=True
