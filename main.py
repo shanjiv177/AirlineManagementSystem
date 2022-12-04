@@ -23,23 +23,23 @@ try:
         con=pymysql.connect(host="localhost",user="root", passwd="manager")
         cursor=con.cursor()
     except pymysql.err.OperationalError:
-        connected=False
         while connected==False:
             dat=ask()
             try:
                 con=pymysql.connect(host="localhost",user=f"{dat[0]}", passwd=f"{dat[1]}")
                 cursor=con.cursor()
             except pymysql.err.OperationalError:
-                connected=False
+                print("\tDatabase connection Unsuccesful!")
+                print("\tPlease provide correct credentials")
             else:
                 connected=True
-
+                
             if connected==True:   
                 if cursor.connection:
                     connected=True
                     print("\tDatabase Connection Successful!")
                 else:
-                    print("\tDatabase connection Unsuccesful!")
+                    pass
             else:
                 pass
     else:
