@@ -3,6 +3,7 @@ This is a simple project, where users can manage Airline. Basically, users can a
 # Requirements
 THe following packages are assumed to be installed in your computer to run this program: 
 * pymysql
+* pymysql[rsa]
 * matplotlib
 # To Dos
 * Remove some unwanted lines of code
